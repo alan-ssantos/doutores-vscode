@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { getUrls } from "../utils/getUrls";
+import { getUrls } from "../utils/getUrl";
 
 export async function openMpis() {
   // Busca o arquivo vetKey na pasta do projeto
@@ -14,7 +14,7 @@ export async function openMpis() {
   // Recebe um array com as urls das mpis
   const vetArray = getUrls(vetKeyContent);
 
-  vetArray.forEach((vet) => {
+  vetArray.forEach((vet: string) => {
     // Caminho do arquivo da mpi
     const uri = vscode.Uri.parse(`${local?.uri.path}/${vet}.php`);
 

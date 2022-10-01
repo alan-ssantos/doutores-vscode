@@ -1,31 +1,29 @@
 import * as vscode from "vscode";
-import { getUrls } from "../utils/getUrl";
+import { getVetKey, getPathnames } from "../utils/vetKeyHandler";
 
 export async function openMpis() {
-  // Busca o arquivo vetKey na pasta do projeto
-  let { 0: vetKey } = await vscode.workspace.findFiles("**/vetKey.php", "", 1);
-  // Guarda a pasta local, baseado no local da vetKey
-  const local = vscode.workspace.getWorkspaceFolder(vetKey);
+  try {
+    if (!vscode.workspace.workspaceFolders) {
+      throw new Error("Pasta do projeto não encontrada.");
+    }
+    const rootUri = vscode.workspace.workspaceFolders[0].uri;
 
-  // Lê o arquivo da vetKey e transforma em string;
-  let vetKeyFile = await vscode.workspace.fs.readFile(vetKey);
-  let vetKeyContent = vetKeyFile.toString();
+    const { content } = await getVetKey();
+    const pathnames = getPathnames(content);
 
-  // Recebe um array com as urls das mpis
-  const vetArray = getUrls(vetKeyContent);
-
-  vetArray.forEach((vet: string) => {
-    // Caminho do arquivo da mpi
-    const uri = vscode.Uri.parse(`${local?.uri.path}/${vet}.php`);
-
-    // Abre o arquivo
-    vscode.workspace.openTextDocument(uri).then(
-      (document: vscode.TextDocument) => {
-        vscode.window.showTextDocument(document, { preview: false }).then(() => {});
-      },
-      (err) => {
-        console.error(err);
+    for (const pathname of pathnames) {
+      try {
+        const doc = await vscode.workspace.openTextDocument(`${rootUri.fsPath}/${pathname}.php`);
+        vscode.window.showTextDocument(doc, { preview: false });
+      } catch (error) {
+        vscode.window.showErrorMessage(`Não foi possível abrir o arquivo ${pathname}.php`);
       }
-    );
-  });
+    }
+  } catch (e) {
+    if (typeof e === "string") {
+      vscode.window.showErrorMessage(e);
+    } else if (e instanceof Error) {
+      vscode.window.showErrorMessage(e.message);
+    }
+  }
 }

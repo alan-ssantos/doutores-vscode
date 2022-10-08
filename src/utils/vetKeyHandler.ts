@@ -21,10 +21,12 @@ export async function getVetKey(filename: string = "vetKey"): Promise<VetKeyInte
 }
 
 export function getPathnames(vetKey: string): string[] {
-  const pathnames = vetKey.match(/((\w+-)+\w+)/g);
-  if (!pathnames) {
+  const urls = vetKey.match(/url"\s=>\s"((\w+-)+\w+)/g);
+  if (!urls) {
     throw new Error("Nenhuma url encontrada na vetKey.");
   }
+
+  const pathnames = urls?.map((url) => url.replace(/url"\s=>\s"/g, ""));
 
   return pathnames;
 }

@@ -8,21 +8,23 @@ async function textToUrl() {
   const editor = vscode.window.activeTextEditor;
 
   if (editor) {
-    const word = editor.document.getText(editor.selection);
-
-    let slug: string;
-    slug = removeAccents(word); // REMOVE OS ACENTOS DO TEXTO
-    slug = slug
-      .normalize("NFD")
-      .toLowerCase()
-      .replace(PREPOSITIONS_REGEX, " ") // SUBSTITUI AS PREPOSIÇÕES POR ESPAÇO
-      .replace(/[!%.'$()*+/;=?\\,/:#@"\\[\]_“”÷°©®℗™ª]/gi, " ")
-      .replace(/<[^>]*>/gi, " ")
-      .trim()
-      .replace(/(\s+)/g, "-");
-
     editor.edit((editBuilder) => {
-      editBuilder.replace(editor.selection, slug);
+      editor.selections.forEach((selection) => {
+        const word = editor.document.getText(selection);
+
+        let slug: string;
+        slug = removeAccents(word);
+        slug = slug
+          .normalize("NFD")
+          .toLowerCase()
+          .replace(PREPOSITIONS_REGEX, " ")
+          .replace(/[!%.'$()*+/;=?\\,/:#@"\\[\]_“”÷°©®℗™ª]/gi, " ")
+          .replace(/<[^>]*>/gi, " ")
+          .trim()
+          .replace(/(\s+)/g, "-");
+
+        editBuilder.replace(selection, slug);
+      });
     });
   }
 }

@@ -1,7 +1,15 @@
 {
   "name": "doutores",
   "displayName": "doutores-vscode",
-  "description": "",
+  "description": "Kit de ferramentas",
+  "author": {
+    "name": "Alan Santos"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alan-ssantos/doutores-vscode.git"
+  },
+  "homepage": "https://github.com/alan-ssantos/doutores-vscode/blob/main/README.md",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.71.0"
@@ -10,7 +18,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onStartupFinished"
   ],
   "main": "./out/extension.js",
   "contributes": {

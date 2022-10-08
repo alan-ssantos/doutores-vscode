@@ -5,6 +5,7 @@
   "author": {
     "name": "Alan Santos"
   },
+  "publisher": "alan-ssantos",
   "repository": {
     "type": "git",
     "url": "https://github.com/alan-ssantos/doutores-vscode.git"
@@ -22,6 +23,21 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": {
+      "title": "Doutores",
+      "properties": {
+        "doutores.textToUrl.removeHtmlTags": {
+          "type": "boolean",
+          "default": false,
+          "description": "Remover tags do HTML."
+        },
+        "doutores.textToUrl.prepositions": {
+          "type": "array",
+          "default": ["a","ante","ate","apos","de","desde","em","entre","com","para","por","perante","sem","sob","sobre","na","no","e","do","da","de"],
+          "description": "Preposições que devem ser removidas (os acentos e símbolos são removidos por padrão)."
+        }
+      }
+    },
     "commands": [
       {
         "command": "doutores.abrirMpis",

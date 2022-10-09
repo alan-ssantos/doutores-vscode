@@ -23,6 +23,20 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "doutores.abrirMpis",
+        "title": "Abrir todas Mpis"
+      },
+      {
+        "command": "doutores.textToUrl",
+        "title": "Texto para URL"
+      },
+      {
+        "command": "doutores.formatOpenFiles",
+        "title": "Formatar arquivos abertos"
+      }
+    ],
     "configuration": {
       "title": "Doutores",
       "properties": {
@@ -38,21 +52,24 @@
         },
         "doutores.textToUrl.prepositions": {
           "type": "array",
-          "default": ["a","ante","ate","apos","de","desde","em","entre","com","para","por","perante","sem","sob","sobre","na","no","e","do","da","de"],
+          "items": {
+            "type": "string"
+          },
+          "default": ["a", "ante", "ate", "apos", "de", "desde", "em", "entre", "com", "para", "por", "perante", "sem", "sob", "sobre", "na", "no", "e", "do", "da", "de"],
           "description": "Preposições que devem ser removidas (os acentos e símbolos são removidos por padrão)."
+        },
+        "doutores.formatOpenFiles.autoSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Salvar o arquivo automaticamente após formata-lo."
+        },
+        "doutores.formatOpenFiles.closeAfterFormat": {
+          "type": "boolean",
+          "default": false,
+          "description": "Fechar o arquivo automaticamente após formata-lo."
         }
       }
-    },
-    "commands": [
-      {
-        "command": "doutores.abrirMpis",
-        "title": "Abrir todas Mpis"
-      },
-      {
-        "command": "doutores.textToUrl",
-        "title": "Texto para URL"
-      }
-    ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

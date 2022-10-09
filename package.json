@@ -35,6 +35,10 @@
       {
         "command": "doutores.formatOpenFiles",
         "title": "Formatar arquivos abertos"
+      },
+      {
+        "command": "doutores.closeWithoutSave",
+        "title": "Descartar alterações e fechar"
       }
     ],
     "configuration": {

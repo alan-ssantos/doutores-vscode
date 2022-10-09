@@ -26,6 +26,11 @@
     "configuration": {
       "title": "Doutores",
       "properties": {
+        "doutores.openMpis.fileName": {
+          "type": "string",
+          "default": "vetKey",
+          "description": "Nome do arquivo com a lista das mpis"
+        },
         "doutores.textToUrl.removeHtmlTags": {
           "type": "boolean",
           "default": false,

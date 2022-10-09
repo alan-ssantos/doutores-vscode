@@ -5,7 +5,9 @@ interface VetKeyInterface {
   content: string;
 }
 
-export async function getVetKey(filename: string = "vetKey"): Promise<VetKeyInterface> {
+export async function getVetKey(): Promise<VetKeyInterface> {
+  const filename: string = vscode.workspace.getConfiguration('doutores.openMpis').get('filename') || 'vetKey';
+
   let { 0: file } = await vscode.workspace.findFiles(`**/${filename}.php`, "", 1);
 
   if (!file) {

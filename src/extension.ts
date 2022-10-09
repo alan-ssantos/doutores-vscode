@@ -1,25 +1,16 @@
 import * as vscode from "vscode";
-import { openMpis } from "./commands/openMpis";
-import textToUrl from "./commands/textToUrl";
-import formatOpenFiles from "./commands/formatOpenFiles";
-import closeWithoutSave from "./commands/closeWithoutSave";
 
-export function activate(context: vscode.ExtensionContext) {
-	let openMpisDisposable = vscode.commands.registerCommand("doutores.abrirMpis", openMpis);
-	let textToUrlDisposable = vscode.commands.registerCommand("doutores.textToUrl", textToUrl);
-	let formatOpenFilesDisposable = vscode.commands.registerCommand(
-		"doutores.formatOpenFiles",
-		formatOpenFiles
-	);
-	let closeWithoutSaveDisposable = vscode.commands.registerCommand(
-		"doutores.closeWithoutSave",
-		closeWithoutSave
-	);
+export async function activate(context: vscode.ExtensionContext) {
+	const commands: vscode.Command[] = context.extension.packageJSON.contributes.commands;
 
-	context.subscriptions.push(openMpisDisposable);
-	context.subscriptions.push(textToUrlDisposable);
-	context.subscriptions.push(formatOpenFilesDisposable);
-	context.subscriptions.push(closeWithoutSaveDisposable);
+	for (const { command } of commands) {
+		const commandName: string = command.replace("doutores.", "");
+		const commandFn = await import(`./commands/${commandName}`);
+
+		const disposable = vscode.commands.registerCommand(command, commandFn.default);
+
+		context.subscriptions.push(disposable);
+	}
 }
 
 // this method is called when your extension is deactivated

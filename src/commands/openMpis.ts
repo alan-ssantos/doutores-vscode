@@ -8,7 +8,7 @@ async function openMpis() {
 		}
 		const rootUri = vscode.workspace.workspaceFolders[0].uri;
 
-		const { content } = await getVetKey();
+		const { content } = await getVetKey(rootUri);
 		const pathnames = getPathnames(content);
 
 		for (let index = 0; index < pathnames.length; index++) {

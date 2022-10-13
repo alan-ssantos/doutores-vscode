@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { getVetKey, getPathnames } from "../utils/vetKeyHandler";
 
-async function openMpis() {
+async function openFiles() {
 	try {
 		if (!vscode.workspace.workspaceFolders) {
 			throw new Error("Pasta do projeto não encontrada.");
@@ -24,4 +24,4 @@ async function openMpis() {
 	}
 }
 
-export default openMpis;
+export default openFiles;

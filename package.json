@@ -25,8 +25,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "doutores.openMpis",
-        "title": "Abrir todas Mpis"
+        "command": "doutores.openFiles",
+        "title": "Abrir arquivos"
       },
       {
         "command": "doutores.textToUrl",
@@ -44,10 +44,10 @@
     "configuration": {
       "title": "Doutores",
       "properties": {
-        "doutores.openMpis.fileName": {
+        "doutores.openFiles.filePath": {
           "type": "string",
           "default": "inc/vetKey.php",
-          "description": "Nome do arquivo com a lista das mpis"
+          "description": "Nome do arquivo com a lista"
         },
         "doutores.textToUrl.removeHtmlTags": {
           "type": "boolean",

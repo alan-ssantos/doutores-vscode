@@ -6,8 +6,8 @@ interface VetKeyInterface {
 }
 
 export async function getVetKey(rootUri: vscode.Uri): Promise<VetKeyInterface> {
-	const filename: string = vscode.workspace.getConfiguration("doutores.openMpis").get("fileName") || "vetKey";
-	const fileUri = vscode.Uri.file(`${rootUri.fsPath}/${filename}`);
+	const filePath: string = vscode.workspace.getConfiguration("doutores.openFiles").get("filePath") || '';
+	const fileUri = vscode.Uri.file(`${rootUri.fsPath}/${filePath}`);
 
 	let content = (await vscode.workspace.fs.readFile(fileUri)).toString();
 

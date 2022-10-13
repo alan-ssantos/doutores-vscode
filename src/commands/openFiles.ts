@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { getVetKey, getPathnames } from "../utils/vetKeyHandler";
+import { getFile, getPathnames } from "../utils/fileHandler";
 
 async function openFiles() {
 	try {
@@ -8,7 +8,7 @@ async function openFiles() {
 		}
 		const rootUri = vscode.workspace.workspaceFolders[0].uri;
 
-		const { content } = await getVetKey(rootUri);
+		const { content } = await getFile(rootUri);
 		const pathnames = getPathnames(content);
 
 		for (let index = 0; index < pathnames.length; index++) {

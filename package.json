@@ -39,6 +39,10 @@
       {
         "command": "doutores.closeWithoutSave",
         "title": "Descartar alterações e fechar"
+      },
+      {
+        "command": "doutores.generateColors",
+        "title": "Gerar cores"
       }
     ],
     "configuration": {
@@ -59,7 +63,29 @@
           "items": {
             "type": "string"
           },
-          "default": ["a", "ante", "ate", "apos", "de", "desde", "em", "entre", "com", "para", "por", "perante", "sem", "sob", "sobre", "na", "no", "e", "do", "da", "de"],
+          "default": [
+            "a",
+            "ante",
+            "ate",
+            "apos",
+            "de",
+            "desde",
+            "em",
+            "entre",
+            "com",
+            "para",
+            "por",
+            "perante",
+            "sem",
+            "sob",
+            "sobre",
+            "na",
+            "no",
+            "e",
+            "do",
+            "da",
+            "de"
+          ],
           "description": "Preposições que devem ser removidas (os acentos e símbolos são removidos por padrão)."
         },
         "doutores.formatOpenFiles.autoSave": {
@@ -92,6 +118,7 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@ctrl/tinycolor": "^3.4.1",
     "remove-accents": "^0.4.3"
   }
 }

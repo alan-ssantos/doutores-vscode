@@ -43,6 +43,10 @@
       {
         "command": "doutores.generateColors",
         "title": "Gerar cores"
+      },
+      {
+        "command": "doutores.replaceDescription",
+        "title": "Substituir Description"
       }
     ],
     "configuration": {

@@ -29,7 +29,7 @@ async function formatOpenFiles() {
 
 					if (langs.includes(documentos[index].languageId)) {
 						await vscode.commands.executeCommand("editor.action.formatDocument");
-						vscode.window.showTextDocument(documentos[index], { preview: false, preserveFocus: false });
+						await vscode.window.showTextDocument(documentos[index], { preview: false, preserveFocus: false });
 					}
 
 					progress.report({ increment: 100 / documentos.length, message: `${index} / ${documentos.length}` });

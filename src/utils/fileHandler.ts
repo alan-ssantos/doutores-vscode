@@ -5,8 +5,19 @@ interface VetKeyInterface {
 	content: string;
 }
 
-export async function getFile(rootUri: vscode.Uri): Promise<VetKeyInterface> {
-	const filePath: string = vscode.workspace.getConfiguration("doutores.openFiles").get("filePath") || "";
+export async function getVetFiles(): Promise<string[]> {
+	const files = await vscode.workspace.findFiles("inc/vet*php");
+	const pathnames = files
+		.map((file) => {
+			const fileName = file.path.split("inc/");
+			return `inc/${fileName[1]}`;
+		})
+		.sort();
+
+	return pathnames;
+}
+
+export async function getFile(rootUri: vscode.Uri, filePath: string): Promise<VetKeyInterface> {
 	const fileUri = vscode.Uri.file(`${rootUri.fsPath}/${filePath}`);
 
 	let content = (await vscode.workspace.fs.readFile(fileUri)).toString();

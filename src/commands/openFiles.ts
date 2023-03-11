@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { getFile, getPathnames } from "../utils/fileHandler";
+import { getFile, getPathnames, getVetFiles } from "../utils/fileHandler";
 
 const REGEX_PATHNAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/gm;
 
@@ -39,8 +39,16 @@ async function openFiles() {
 		if (selectedPathnames.length > 0) {
 			pathnames = selectedPathnames;
 		} else {
-			const { content } = await getFile(rootUri);
+			const vetOptions = await getVetFiles();
+			const result = await vscode.window.showQuickPick(vetOptions, {});
+			
+			if (!result) {
+				return;
+			}
+
+			const { content } = await getFile(rootUri, result);
 			pathnames = getPathnames(content);
+			console.log(pathnames);
 		}
 
 		for (let index = 0; index < pathnames.length; index++) {

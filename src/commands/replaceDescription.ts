@@ -47,6 +47,8 @@ function getNewDescription(documentText: string): string {
 }
 
 async function replaceDescription() {
+	const config = vscode.workspace.getConfiguration("doutores.replaceDescription");
+
 	try {
 		const editor = vscode.window.activeTextEditor;
 
@@ -74,6 +76,10 @@ async function replaceDescription() {
 					builder.replace(description.range, `$desc = "${newDescription}";`);
 				}
 			});
+
+			if (config.get("autoSave") === true) {
+				await vscode.commands.executeCommand("workbench.action.files.save");
+			}
 		}
 	} catch (e) {
 		if (typeof e === "string") {

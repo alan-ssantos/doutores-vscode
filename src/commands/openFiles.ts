@@ -1,15 +1,47 @@
 import * as vscode from "vscode";
 import { getFile, getPathnames } from "../utils/fileHandler";
 
+const REGEX_PATHNAME = /^[a-z0-9]+(?:-[a-z0-9]+)*$/gm;
+
 async function openFiles() {
+	const editor = vscode.window.activeTextEditor;
+	let selectedPathnames: string[] = [];
+
 	try {
 		if (!vscode.workspace.workspaceFolders) {
 			throw new Error("Pasta do projeto não encontrada.");
 		}
 		const rootUri = vscode.workspace.workspaceFolders[0].uri;
 
-		const { content } = await getFile(rootUri);
-		const pathnames = getPathnames(content);
+		if (editor) {
+			if (editor.selections.length > 0) {
+				if (editor.selections.length === 1) {
+					const text = editor.document.getText(editor.selections[0]);
+					const splittedPathnames = text.split("\n");
+
+					for (let index = 0; index < splittedPathnames.length; index++) {
+						if (splittedPathnames[index].match(REGEX_PATHNAME)) {
+							selectedPathnames.push(splittedPathnames[index]);
+						}
+					}
+				} else {
+					for (let index = 0; index < editor.selections.length; index++) {
+						const text = editor.document.getText(editor.selections[index]);
+						if (text.match(REGEX_PATHNAME)) {
+							selectedPathnames.push(text);
+						}
+					}
+				}
+			}
+		}
+
+		let pathnames: string[];
+		if (selectedPathnames.length > 0) {
+			pathnames = selectedPathnames;
+		} else {
+			const { content } = await getFile(rootUri);
+			pathnames = getPathnames(content);
+		}
 
 		for (let index = 0; index < pathnames.length; index++) {
 			const uri = vscode.Uri.file(`${rootUri.fsPath}/${pathnames[index]}.php`);

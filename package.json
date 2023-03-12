@@ -47,6 +47,10 @@
       {
         "command": "doutores.replaceDescription",
         "title": "Substituir Description"
+      },
+      {
+        "command": "doutores.addStrongTag",
+        "title": "Adicionar strong no texto"
       }
     ],
     "configuration": {
@@ -101,6 +105,11 @@
           "type": "boolean",
           "default": true,
           "description": "Remove tags HTML, símbolos e espaços desnecessários da description."
+        },
+        "doutores.addStrongTag.autoSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Salvar o arquivo automaticamente após adicionar as tags strong."
         }
       }
     }

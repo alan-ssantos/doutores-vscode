@@ -71,6 +71,17 @@ async function replaceDescription() {
 				newDescription = getNewDescription(documentText);
 			}
 
+			if (config.get("cleanDescription") === true) {
+				newDescription = newDescription
+					.replace(/<[^>]*>/g, "")
+					.replace("  ", " ")
+					.replace("  ", " ")
+					.replace(" ,", ",")
+					.replace(" .", ".")
+					.replace(" ?", "?")
+					.trim();
+			}
+
 			editor.edit((builder) => {
 				if (description.range) {
 					builder.replace(description.range, `$desc = "${newDescription}";`);

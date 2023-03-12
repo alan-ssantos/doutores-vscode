@@ -52,11 +52,6 @@
     "configuration": {
       "title": "Doutores",
       "properties": {
-        "doutores.openFiles.filePath": {
-          "type": "string",
-          "default": "inc/vetKey.php",
-          "description": "Nome do arquivo com a lista"
-        },
         "doutores.textToUrl.removeHtmlTags": {
           "type": "boolean",
           "default": false,
@@ -96,6 +91,16 @@
           "type": "boolean",
           "default": true,
           "description": "Salvar o arquivo automaticamente após formata-lo."
+        },
+        "doutores.replaceDescription.autoSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Salvar o arquivo automaticamente após substituir a descrição."
+        },
+        "doutores.replaceDescription.cleanDescription": {
+          "type": "boolean",
+          "default": true,
+          "description": "Remove tags HTML, símbolos e espaços desnecessários da description."
         }
       }
     }

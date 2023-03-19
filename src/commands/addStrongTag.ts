@@ -22,13 +22,6 @@ async function addStrongTag() {
 
 			const pageTitle = getPageTitle(documentText);
 
-			const strongRegex = new RegExp("<strong[^>]*>(" + pageTitle.toLowerCase() + ")</strong>", "gi");
-			const strongInDocument = documentText.match(strongRegex);
-
-			if (strongInDocument && strongInDocument.length >= 3) {
-				throw new Error("Esta página já tem 3 ou mais <strong> no texto.");
-			}
-
 			const paragraphRegex = new RegExp("<p>(.|\n)*?(" + pageTitle.toLowerCase() + ")(.|\n)*?</p>", "gi");
 			const paragraphs = documentText.match(paragraphRegex);
 
@@ -37,16 +30,12 @@ async function addStrongTag() {
 					for (let index = 0; index < paragraphs.length; index++) {
 						let paragraph = paragraphs[index];
 
-						const strongInParagraph = paragraph.match(strongRegex);
-
-						if (!strongInParagraph) {
-							const position = document.positionAt(documentText.indexOf(paragraph));
-							const range = document.getWordRangeAtPosition(position, /<p>(.|\n)*?<\/p>/g);
-							if (range) {
-								const titleRegex = new RegExp(pageTitle, "gi");
-								const newParagraph = paragraph.replace(titleRegex, `<strong>${pageTitle.toLowerCase()}</strong>`);
-								builder.replace(range, newParagraph);
-							}
+						const position = document.positionAt(documentText.indexOf(paragraph));
+						const range = document.getWordRangeAtPosition(position, /<p>(.|\n)*?<\/p>/g);
+						if (range) {
+							const titleRegex = new RegExp("(<strong[^>]*>(" + pageTitle + ")</strong>)|(" + pageTitle + ")", "gi");
+							const newParagraph = paragraph.replace(titleRegex, `<strong>${pageTitle.toLowerCase()}</strong>`);
+							builder.replace(range, newParagraph);
 						}
 					}
 				});

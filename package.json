@@ -51,6 +51,10 @@
       {
         "command": "doutores.addStrongTag",
         "title": "Adicionar strong no texto"
+      },
+      {
+        "command": "doutores.runOnOpenFiles",
+        "title": "Executar nos arquivos abertos"
       }
     ],
     "configuration": {

@@ -116,7 +116,41 @@
           "description": "Salvar o arquivo automaticamente após adicionar as tags strong."
         }
       }
-    }
+    },
+    "keybindings": [
+      {
+        "command": "doutores.openFiles",
+        "key": "ctrl+k a"
+      },
+      {
+        "command": "doutores.textToUrl",
+        "key": "ctrl+k t"
+      },
+      {
+        "command": "doutores.formatOpenFiles",
+        "key": "ctrl+k f"
+      },
+      {
+        "command": "doutores.closeWithoutSave",
+        "key": "ctrl+k w"
+      },
+      {
+        "command": "doutores.generateColors",
+        "key": "ctrl+k p"
+      },
+      {
+        "command": "doutores.replaceDescription",
+        "key": "ctrl+k d"
+      },
+      {
+        "command": "doutores.addStrongTag",
+        "key": "ctrl+k o"
+      },
+      {
+        "command": "doutores.runOnOpenFiles",
+        "key": "ctrl+k k"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

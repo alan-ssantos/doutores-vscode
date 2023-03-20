@@ -52,5 +52,5 @@ Substitui a description de um arquivo de mpi, a nova description é retirada a p
 Adiciona a tag strong em todas as ocorrências da palavra-chave em um arquivo de mpi.
 
 ### Executar nos arquivos abertos <kbd>ctrl+k k</kbd>
-Permite executar os comandos (até o momento) de [Substituir Description <kbd>ctrl+k d</kbd>](#substituir-description-ctrlk-d) em todos os arquivos PHP abertos no editor.
+Permite executar os comandos (até o momento) de [Substituir Description <kbd>ctrl+k d</kbd>](#substituir-description-ctrlk-d) e [Adicionar strong no texto <kbd>ctrl+k o</kbd>](#adicionar-strong-no-texto-ctrlk-o) em todos os arquivos PHP abertos no editor.
 

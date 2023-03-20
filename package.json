@@ -1,7 +1,7 @@
 {
   "name": "doutores",
-  "displayName": "doutores-vscode",
-  "description": "Kit de ferramentas",
+  "displayName": "Doutores Toolkit",
+  "description": "Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros em projetos da doutores.",
   "author": {
     "name": "Alan Santos"
   },
@@ -11,7 +11,7 @@
     "url": "https://github.com/alan-ssantos/doutores-vscode.git"
   },
   "homepage": "https://github.com/alan-ssantos/doutores-vscode/blob/main/README.md",
-  "version": "0.1.0",
+  "version": "0.17.19",
   "engines": {
     "vscode": "^1.71.0"
   },
@@ -58,7 +58,7 @@
       }
     ],
     "configuration": {
-      "title": "Doutores",
+      "title": "Doutores Toolkit",
       "properties": {
         "doutores.textToUrl.removeHtmlTags": {
           "type": "boolean",

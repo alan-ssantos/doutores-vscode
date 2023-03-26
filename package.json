@@ -132,7 +132,7 @@
       },
       {
         "command": "doutores.closeWithoutSave",
-        "key": "ctrl+k w"
+        "key": "ctrl+k q"
       },
       {
         "command": "doutores.generateColors",

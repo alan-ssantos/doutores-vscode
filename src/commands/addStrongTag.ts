@@ -1,14 +1,5 @@
 import * as vscode from "vscode";
-
-function getPageTitle(documentText: string): string {
-	let [match, title] = [...documentText.matchAll(/\$h1\s?=\s?"(.*)";/gi)][0];
-
-	if (!title) {
-		throw new Error("A variável $h1 não foi encontrada no documento.");
-	}
-
-	return title.trim();
-}
+import { getPageTitle } from "../utils/mpiHelper";
 
 async function addStrongTag() {
 	const config = vscode.workspace.getConfiguration("doutores.addStrongTag");

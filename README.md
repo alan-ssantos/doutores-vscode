@@ -9,7 +9,7 @@ Esta extensão funciona como um kit de ferramentas, pois trás um compilado de f
 - [Abrir arquivos <kbd>ctrl+k a</kbd>](#abrir-arquivos-ctrlk-a)
 - [Texto para URL <kbd>ctrl+k t</kbd>](#texto-para-url-ctrlk-t)
 - [Formatar arquivos abertos <kbd>ctrl+k f</kbd>](#formatar-arquivos-abertos-ctrlk-f)
-- [Descartar alterações e fechar <kbd>ctrl+k w</kbd>](#descartar-altera%C3%A7%C3%B5es-e-fechar-ctrlk-w)
+- [Descartar alterações e fechar <kbd>ctrl+k q</kbd>](#descartar-altera%C3%A7%C3%B5es-e-fechar-ctrlk-q)
 - [Gerar cores <kbd>ctrl+k p</kbd>](#gerar-cores-ctrlk-p)
 - [Substituir Description <kbd>ctrl+k d</kbd>](#substituir-description-ctrlk-d)
 - [Adicionar strong no texto <kbd>ctrl+k o</kbd>](#adicionar-strong-no-texto-ctrlk-o)
@@ -38,7 +38,7 @@ Executa a formatação em todos os arquivos que estiverem abertos.
 Ao executar este comando, será utilizado o formatador padrão ou o definido pelo usuário, para arquivos PHP é possível utilizar o [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) ou similares.
   > Atente-se em fechar os arquivos que não devem ser alterados.
 
-### Descartar alterações e fechar <kbd>ctrl+k w</kbd>
+### Descartar alterações e fechar <kbd>ctrl+k q</kbd>
 Comando para descartar as <strong>alterações não salvas</strong> de um arquivo e o fecha-lo logo em seguida.
 
 ### Gerar cores <kbd>ctrl+k p</kbd>

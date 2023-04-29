@@ -19,7 +19,7 @@ async function textToUrl() {
 					.normalize("NFD")
 					.toLowerCase()
 					.replace(prepositionsRegex, " ")
-					.replace(/[!%.'$()*+;=?\\,:#@"\\[\]_\/“”÷°©®℗™ª]/g, " ");
+					.replace(/[!%.'$()*+;=?\\,:#@"\\[\]_\/“”÷°©®℗™ªº–—©®℗¦|™‹›»«’]/g, " ");
 
 				if (config.get("removeHtmlTags")) {
 					slug = slug.replace(/<[^>]*>/g, " ");

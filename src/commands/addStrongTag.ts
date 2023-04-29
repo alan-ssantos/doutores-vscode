@@ -12,9 +12,7 @@ async function addStrongTag() {
 			const documentText = document.getText();
 
 			const pageTitle = getPageTitle(documentText);
-
-			const paragraphRegex = new RegExp("<p>(.|\n)*?(" + pageTitle.toLowerCase() + ")(.|\n)*?</p>", "gi");
-			const paragraphs = documentText.match(paragraphRegex);
+			const paragraphs = documentText.match(/<p[^>]*>(.|\n)*?<\/p>/g);
 
 			if (paragraphs && paragraphs.length > 0) {
 				editor.edit((builder) => {
@@ -22,7 +20,7 @@ async function addStrongTag() {
 						let paragraph = paragraphs[index];
 
 						const position = document.positionAt(documentText.indexOf(paragraph));
-						const range = document.getWordRangeAtPosition(position, /<p>(.|\n)*?<\/p>/g);
+						const range = document.getWordRangeAtPosition(position, /<p[^>]*>(.|\n)*?<\/p>/g);
 						if (range) {
 							const titleRegex = new RegExp("(<strong[^>]*>(" + pageTitle + ")</strong>)|(" + pageTitle + ")", "gi");
 							const newParagraph = paragraph.replace(titleRegex, `<strong>${pageTitle.toLowerCase()}</strong>`);

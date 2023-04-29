@@ -48,7 +48,6 @@ async function openFiles() {
 
 			const { content } = await getFile(rootUri, result);
 			pathnames = getPathnames(content);
-			console.log(pathnames);
 		}
 
 		for (let index = 0; index < pathnames.length; index++) {

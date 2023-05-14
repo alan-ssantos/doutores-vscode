@@ -1,0 +1,261 @@
+{
+  "pagina": {
+    "prefix": "pagina",
+    "body": [
+      "<?",
+      "\\$h1\t\t\t\t = \"$1\";",
+      "\\$title\t\t\t= \"$1\";",
+      "\\$desc\t\t\t = \"$1 - \";",
+      "\\$key\t\t\t\t= \"uuuuuuuuuu, jjjjjjjjjjjj, lllllllllll\";",
+      "\\$var\t\t\t\t= \"$1\";",
+      "include(\"inc/head.php\");",
+      "?>",
+      "<!--STARTSCRIPTSHEADER-->",
+      "<!--ENDSCRIPTSHEADER-->",
+      "</head>\n",
+      "<body>",
+      "\t<?php include(\"inc/topo.php\"); ?>",
+      "\t<main>",
+      "\t\t<div class=\"content\">",
+      "\t\t\t<section>",
+      "\t\t\t\t<?= \\$autoBreadcrumb ?>",
+      "\t\t\t\t<!--STARTCOMPONENTS-->",
+      "\t\t\t\t<div class=\"container\">",
+      "\t\t\t\t\t<div class=\"wrapper\">",
+      "\t\t\t\t\t\t<h2>Saiba mais sobre <?= \\$h1 ?></h2>",
+      "\t\t\t\t\t\t<p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>",
+      "\t\t\t\t\t</div>",
+      "\t\t\t\t\t<div class=\"clear\"></div>",
+      "\t\t\t\t</div>",
+      "\t\t\t\t<!--ENDCOMPONENTS-->",
+      "\t\t\t</section>",
+      "\t\t</div>",
+      "\t</main>",
+      "\t<?php include(\"inc/footer.php\"); ?>",
+      "\t<!--STARTSCRIPTSFOOTER-->",
+      "\t<!--ENDSCRIPTSFOOTER-->",
+      "</body>\n",
+      "</html>"
+    ],
+    "description": "Adiciona a estrutura padrão de uma página."
+  },
+  "container": {
+    "prefix": "container",
+    "body": [
+      "<div class=\"container\">",
+      "\t<div class=\"wrapper\">",
+      "\t\t${1:$TM_SELECTED_TEXT}",
+      "\t\t<div class=\"clear\"></div>",
+      "\t</div>",
+      "</div>"
+    ],
+    "description": "Adiciona um componente container + wrapper."
+  },
+  "link": {
+    "prefix": "link",
+    "body": [
+      "<a href=\"<?= \\$url ?>$1\" title=\"$1\">$1</a>"
+    ],
+    "description": "Adiciona uma tag de ancora."
+  },
+  "link externo": {
+    "prefix": "link-externo",
+    "body": [
+      "<a href=\"$1\" target=\"_blank\" rel=\"noreferrer noopener nofollow\" title=\"$1\">$1</a>"
+    ],
+    "description": "Adiciona uma tag de ancora para um link externo."
+  },
+  "php": {
+    "prefix": "php",
+    "body": [
+      "<?php $1 ?>"
+    ],
+    "description": "Adiciona uma tag PHP"
+  },
+  "include": {
+    "prefix": "include",
+    "body": [
+      "<?php include(\"inc/$1\"); ?>"
+    ],
+    "description": "Adiciona uma tag PHP com a função include."
+  },
+  "Galeria de imagens com grid": {
+    "prefix": "galeria",
+    "body": [
+      "<div class=\"grid grid-col-${1|2,3,4,5,6,1-2,1-3,1-4,2-1,2-3,3-1,3-2,4-1|}\">",
+      "\t<?php",
+      "\t\\$imagens = glob(\"imagens/$2-{,[0-9]}[0-9].jpg\", GLOB_BRACE);",
+      "\tforeach (\\$imagens as \\$key => \\$imagem) : ?>",
+      "\t\t<a href=\"<?= \\$url . \\$imagem ?>\" data-fancybox=\"group1\" class=\"lightbox\" title=\"<?= \\$h1 ?>\" data-caption=\"<?= \\$h1 ?>\">",
+      "\t\t\t<img src=\"<?= \\$url . \\$imagem ?>\" alt=\"<?= \\$h1 ?>\" title=\"<?= \\$h1 ?>\" loading=\"lazy\">",
+      "\t\t</a>",
+      "\t<?php endforeach; ?>",
+      "</div>"
+    ],
+    "description": "Adiciona um componente para exibir um grupo de imagens encontradas pela função glob do PHP."
+  },
+  "Galeria com nome dos arquivos": {
+    "prefix": "galeria-nomeada",
+    "body": [
+      "<div class=\"grid-col-${1|2,3,4,5,6,1-2,1-3,1-4,2-1,2-3,3-1,3-2,4-1|}\">",
+      "\t<?php",
+      "\t\\$imagens = glob(\"imagens/$1-{,[0-9]}[0-9].jpg\", GLOB_BRACE);",
+      "\tforeach (\\$imagens as \\$key => \\$imagem) :",
+      "\t\t\\$nome = ucwords(basename(str_replace(['.jpg', '.png', '.webp', '-'], ' ', \\$imagem)));",
+      "\t?>",
+      "\t\t<a href=\"<?= \\$url . \\$imagem ?>\" data-fancybox=\"group1\" class=\"lightbox\" title=\"<?= \\$nome ?>\" data-caption=\"<?= \\$nome ?>\">",
+      "\t\t\t<img src=\"<?= \\$url . \\$imagem ?>\" alt=\"<?= \\$nome ?>\" title=\"<?= \\$nome ?>\" loading=\"lazy\" class=\"picture-center\">",
+      "\t\t</a>",
+      "\t<?php endforeach; ?>",
+      "</div>"
+    ],
+    "description": "Galeria com slick, fancy e alt/title baseados no nome do arquivos."
+  },
+  "Fancybox": {
+    "prefix": "fancy",
+    "body": [
+      "<a href=\"<?=\\$url?>\" data-fancybox=\"group1\" class=\"lightbox\" title=\"<?=\\$h1?>\" data-caption=\"<?=\\$h1?>\">",
+      "\t<img src=\"<?=\\$url?>\" alt=\"<?=\\$h1?>\" title=\"<?=\\$h1?>\" itemprop=\"image\" loading=\"lazy\">",
+      "</a>"
+    ],
+    "description": "Fancybox"
+  },
+  "URL": {
+    "prefix": "url",
+    "body": [
+      "<?= \\$url; ?>"
+    ],
+    "description": "Adiciona uma tag PHP com a variável $url."
+  },
+  "URL Pagina": {
+    "prefix": "urlpagina",
+    "body": [
+      "<?= \\$urlPagina; ?>"
+    ],
+    "description": "Adiciona uma tag PHP com a variável $urlPagina."
+  },
+  "URL Imagens": {
+    "prefix": "urlimagens",
+    "body": [
+      "<?= \\$url; ?>imagens/$1.jpg"
+    ],
+    "description": "Adiciona uma tag PHP com a variável url de imagens padrão."
+  },
+  "Nome do Site": {
+    "prefix": "nomesite",
+    "body": [
+      "<?= \\$nomeSite ?>"
+    ],
+    "description": "Adiciona uma tag PHP com a variável $nomeSite."
+  },
+  "Imagem": {
+    "prefix": "image",
+    "body": [
+      "<img src=\"<?= \\$url ?>imagens/$1\" alt=\"<?= \\$nomeSite ?>\" title=\"<?= \\$nomeSite ?>\" loading=\"lazy\">"
+    ],
+    "description": "Adiciona uma tag de imagem com os atributos alt e title."
+  },
+  "Botão": {
+    "prefix": "btn",
+    "body": [
+      "<a href=\"<?= \\$url ?>\" class=\"btn\" title=\"${1:$TM_SELECTED_TEXT}\">${1:$TM_SELECTED_TEXT}</a>"
+    ],
+    "description": "Adiciona um link com a classe btn."
+  },
+  "Lista": {
+    "prefix": "lista",
+    "body": [
+      "<ul class=\"list\">",
+      "\t<li>$1</li>",
+      "\t<li>$1</li>",
+      "\t<li>$1</li>",
+      "</ul>"
+    ],
+    "description": "Adiciona uma lista (ul) com três items (li)"
+  },
+  "canais": {
+    "prefix": "canais",
+    "body": [
+      "<?php include(\"inc/canais.php\")?>"
+    ],
+    "description": "Adiciona a include de canais"
+  },
+  "Mapa": {
+    "prefix": "mapa",
+    "body": [
+      "<iframe src=\"<?= \\$mapa; ?>\" class=\"address-map $1\"></iframe>"
+    ],
+    "description": "Adiciona o mapa do google"
+  },
+  "FontAwesome": {
+    "prefix": "fontawesome",
+    "body": [
+      "<i class=\"fa-${1|solid,brand|} fa-$2\" aria-hidden=\"true\"></i>"
+    ],
+    "description": "Adiciona um ícone do FontAwesome"
+  },
+  "tabela": {
+    "prefix": "tabela",
+    "body": [
+      "<table class=\"table\">",
+      "\t<thead>",
+      "\t\t<tr>",
+      "\t\t\t<th>$1</th>",
+      "\t\t\t<th>$2</th>",
+      "\t\t</tr>",
+      "\t</thead>",
+      "\t<tbody>",
+      "\t\t<tr>",
+      "\t\t\t<td>$3</td>",
+      "\t\t\t<td>$4</td>",
+      "\t\t</tr>",
+      "\t</tbody>",
+      "</table>"
+    ],
+    "description": "Adiciona a estrutura de uma tabela."
+  },
+  "Sessão CSS": {
+    "prefix": "comsec",
+    "body": [
+      "/* ==================== $1 ==================== */",
+      "${2:$TM_SELECTED_TEXT}",
+      "/* ================== FIM $1 ================== */"
+    ],
+    "description": "Adiciona comentário de sessão no CSS"
+  },
+  "Primary Color": {
+    "prefix": "primary-color",
+    "body": [
+      "var(--primary-color)"
+    ],
+    "description": "Variável da cor primária"
+  },
+  "Secondary Color": {
+    "prefix": "secondary-color",
+    "body": [
+      "var(--secondary-color)"
+    ],
+    "description": "Variável da cor secundária"
+  },
+  "Breakpoint Mobile": {
+    "prefix": "mobile",
+    "body": [
+      "@media screen and (max-width: 576px) {\n\t$1\n}"
+    ],
+    "description": "Adiciona breakpoint para telas com até 576px de largura."
+  },
+  "Breakpoint Tablet": {
+    "prefix": "tablet",
+    "body": [
+      "@media screen and (max-width: 768px) {\n\t$1\n}"
+    ],
+    "description": "Adiciona breakpoint para telas com até 768px de largura."
+  },
+  "Breakpoint Large": {
+    "prefix": "large",
+    "body": [
+      "@media screen and (max-width: 1024px) {\n\t$1\n}"
+    ],
+    "description": "Adiciona breakpoint para telas com até 1024px de largura."
+  }
+}

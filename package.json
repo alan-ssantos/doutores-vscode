@@ -1,6 +1,6 @@
 {
   "name": "drs",
-  "displayName": "Drs. Toolkit",
+  "displayName": "Drs.",
   "description": "Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros em projetos.",
   "author": {
     "name": "Alan Santos"
@@ -77,7 +77,7 @@
       }
     ],
     "configuration": {
-      "title": "Drs. Toolkit",
+      "title": "Drs.",
       "properties": {
         "drs.textToUrl.removeHtmlTags": {
           "type": "boolean",

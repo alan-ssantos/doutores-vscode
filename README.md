@@ -1,4 +1,4 @@
-<h1><strong>Drs. Toolkit</strong></h1>
+<h1><strong>Drs.</strong></h1>
 
 ## 📖 Sobre o projeto
 

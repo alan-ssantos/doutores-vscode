@@ -4,7 +4,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	const commands: vscode.Command[] = context.extension.packageJSON.contributes.commands;
 
 	for (const { command } of commands) {
-		const commandName: string = command.replace("doutores.", "");
+		const commandName: string = command.replace("drs.", "");
 		const commandFn = await import(`./commands/${commandName}`);
 
 		const disposable = vscode.commands.registerCommand(command, commandFn.default);

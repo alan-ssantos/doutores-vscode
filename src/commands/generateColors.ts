@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { TinyColor } from "@ctrl/tinycolor";
 
 async function textToUrl() {
-	// const config = vscode.workspace.getConfiguration("doutores.textToUrl");
+	// const config = vscode.workspace.getConfiguration("drs.textToUrl");
 	const editor = vscode.window.activeTextEditor;
 
 	if (editor) {

@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 
 async function formatOpenFiles() {
-	const config = vscode.workspace.getConfiguration("doutores.formatOpenFiles");
+	const config = vscode.workspace.getConfiguration("drs.formatOpenFiles");
 	const editor = vscode.window.activeTextEditor;
 
 	if (editor) {

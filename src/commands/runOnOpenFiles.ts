@@ -13,8 +13,8 @@ async function runOnOpenFiles() {
 		const langs = ["php"];
 
 		const commandList: CommandList[] = [
-			{ command: "doutores.replaceDescription", title: "Substituir a descrição" },
-			{ command: "doutores.addStrongTag", title: "Adicionar strong no texto" },
+			{ command: "drs.replaceDescription", title: "Substituir a descrição" },
+			{ command: "drs.addStrongTag", title: "Adicionar strong no texto" },
 		];
 
 		const result = await vscode.window.showQuickPick(

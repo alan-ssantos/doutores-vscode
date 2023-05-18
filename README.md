@@ -1,8 +1,9 @@
-<h1><strong>DOUTORES TOOLKIT</strong></h1>
+<h1><strong>Drs. Toolkit</strong></h1>
 
 ## 📖 Sobre o projeto
 
-Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros em projetos da doutores. 🛠️👨🏽‍⚕️
+Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros em projetos
+. 🛠️👨🏽‍⚕️
 
 ## 📑 Lista de comandos
 
@@ -18,7 +19,7 @@ Esta extensão funciona como um kit de ferramentas, pois trás um compilado de f
 ## 🛠️ Instalação e execução
 
 ## Como instalar
-1. Faça o download do arquivo [`doutores-0.17.19.vsix`](https://github.com/alan-ssantos/doutores-vscode/releases) na sessão assets;
+1. Faça o download do arquivo [`drs-0.19.0.vsix`](https://github.com/alan-ssantos/drs/releases) na sessão assets;
 2. No VS Code, vá até a aba de extensões <kbd>ctrl+shift+x</kbd>;
 3. Com a aba de extensões aberta, clique em mais opções (os três pontinhos ao lado do título da aba) e em seguida em "Instalar do VSIX...";
 4. Selecione o arquivo da extensão baixado anteriormente e aguarde que a instalação seja concluída. 

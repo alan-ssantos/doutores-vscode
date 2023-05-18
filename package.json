@@ -1,16 +1,16 @@
 {
-  "name": "doutores",
-  "displayName": "Doutores Toolkit",
-  "description": "Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros em projetos da doutores.",
+  "name": "drs",
+  "displayName": "Drs. Toolkit",
+  "description": "Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros em projetos.",
   "author": {
     "name": "Alan Santos"
   },
   "publisher": "alan-ssantos",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alan-ssantos/doutores-vscode.git"
+    "url": "https://github.com/alan-ssantos/drs.git"
   },
-  "homepage": "https://github.com/alan-ssantos/doutores-vscode/blob/main/README.md",
+  "homepage": "https://github.com/alan-ssantos/drs/blob/main/README.md",
   "version": "0.18.0",
   "engines": {
     "vscode": "^1.71.0"
@@ -44,47 +44,47 @@
     ],
     "commands": [
       {
-        "command": "doutores.openFiles",
+        "command": "drs.openFiles",
         "title": "Abrir arquivos"
       },
       {
-        "command": "doutores.textToUrl",
+        "command": "drs.textToUrl",
         "title": "Texto para URL"
       },
       {
-        "command": "doutores.formatOpenFiles",
+        "command": "drs.formatOpenFiles",
         "title": "Formatar arquivos abertos"
       },
       {
-        "command": "doutores.closeWithoutSave",
+        "command": "drs.closeWithoutSave",
         "title": "Descartar alterações e fechar"
       },
       {
-        "command": "doutores.generateColors",
+        "command": "drs.generateColors",
         "title": "Gerar cores"
       },
       {
-        "command": "doutores.replaceDescription",
+        "command": "drs.replaceDescription",
         "title": "Substituir Description"
       },
       {
-        "command": "doutores.addStrongTag",
+        "command": "drs.addStrongTag",
         "title": "Adicionar strong no texto"
       },
       {
-        "command": "doutores.runOnOpenFiles",
+        "command": "drs.runOnOpenFiles",
         "title": "Executar nos arquivos abertos"
       }
     ],
     "configuration": {
-      "title": "Doutores Toolkit",
+      "title": "Drs. Toolkit",
       "properties": {
-        "doutores.textToUrl.removeHtmlTags": {
+        "drs.textToUrl.removeHtmlTags": {
           "type": "boolean",
           "default": false,
           "description": "Remover tags do HTML."
         },
-        "doutores.textToUrl.prepositions": {
+        "drs.textToUrl.prepositions": {
           "type": "array",
           "items": {
             "type": "string"
@@ -114,22 +114,22 @@
           ],
           "description": "Preposições que devem ser removidas (os acentos e símbolos são removidos por padrão)."
         },
-        "doutores.formatOpenFiles.autoSave": {
+        "drs.formatOpenFiles.autoSave": {
           "type": "boolean",
           "default": true,
           "description": "Salvar o arquivo automaticamente após formata-lo."
         },
-        "doutores.replaceDescription.autoSave": {
+        "drs.replaceDescription.autoSave": {
           "type": "boolean",
           "default": true,
           "description": "Salvar o arquivo automaticamente após substituir a descrição."
         },
-        "doutores.replaceDescription.cleanDescription": {
+        "drs.replaceDescription.cleanDescription": {
           "type": "boolean",
           "default": true,
           "description": "Remove tags HTML, símbolos e espaços desnecessários da description."
         },
-        "doutores.addStrongTag.autoSave": {
+        "drs.addStrongTag.autoSave": {
           "type": "boolean",
           "default": true,
           "description": "Salvar o arquivo automaticamente após adicionar as tags strong."
@@ -138,35 +138,35 @@
     },
     "keybindings": [
       {
-        "command": "doutores.openFiles",
+        "command": "drs.openFiles",
         "key": "ctrl+k a"
       },
       {
-        "command": "doutores.textToUrl",
+        "command": "drs.textToUrl",
         "key": "ctrl+k t"
       },
       {
-        "command": "doutores.formatOpenFiles",
+        "command": "drs.formatOpenFiles",
         "key": "ctrl+k f"
       },
       {
-        "command": "doutores.closeWithoutSave",
+        "command": "drs.closeWithoutSave",
         "key": "ctrl+k q"
       },
       {
-        "command": "doutores.generateColors",
+        "command": "drs.generateColors",
         "key": "ctrl+k p"
       },
       {
-        "command": "doutores.replaceDescription",
+        "command": "drs.replaceDescription",
         "key": "ctrl+k d"
       },
       {
-        "command": "doutores.addStrongTag",
+        "command": "drs.addStrongTag",
         "key": "ctrl+k o"
       },
       {
-        "command": "doutores.runOnOpenFiles",
+        "command": "drs.runOnOpenFiles",
         "key": "ctrl+k k"
       }
     ]

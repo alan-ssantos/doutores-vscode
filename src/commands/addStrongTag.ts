@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { getPageTitle } from "../utils/mpiHelper";
 
 async function addStrongTag() {
-	const config = vscode.workspace.getConfiguration("doutores.addStrongTag");
+	const config = vscode.workspace.getConfiguration("drs.addStrongTag");
 
 	try {
 		const editor = vscode.window.activeTextEditor;

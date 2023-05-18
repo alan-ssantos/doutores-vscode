@@ -25,7 +25,7 @@ function getNewDescription(documentText: string): string {
 }
 
 async function replaceDescription() {
-	const config = vscode.workspace.getConfiguration("doutores.replaceDescription");
+	const config = vscode.workspace.getConfiguration("drs.replaceDescription");
 
 	try {
 		const editor = vscode.window.activeTextEditor;

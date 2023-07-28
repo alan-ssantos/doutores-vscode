@@ -72,6 +72,10 @@
         "title": "Adicionar strong no texto"
       },
       {
+        "command": "drs.createFilesFromVet",
+        "title": "Criar arquivos"
+      },
+      {
         "command": "drs.runOnOpenFiles",
         "title": "Executar nos arquivos abertos"
       }
@@ -164,6 +168,10 @@
       {
         "command": "drs.addStrongTag",
         "key": "ctrl+k o"
+      },
+      {
+        "command": "drs.createFilesFromVet",
+        "key": "ctrl+k x"
       },
       {
         "command": "drs.runOnOpenFiles",

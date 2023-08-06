@@ -1,32 +1,19 @@
 import * as vscode from "vscode";
-import * as removeAccents from "remove-accents";
+import makeSlug from "../utils/makeSlug";
+
+const config = vscode.workspace.getConfiguration("drs.textToUrl");
 
 async function textToUrl() {
-	const config = vscode.workspace.getConfiguration("drs.textToUrl");
 	const editor = vscode.window.activeTextEditor;
 
 	if (editor) {
-		const prepositions: string[] = config.get("prepositions") || [];
-		const prepositionsRegex: RegExp = new RegExp(prepositions.map((p) => `(\\s)${p}(\\s)`).join("|"), "g");
-
 		editor.edit((editBuilder) => {
+			const removeHtmlTags: boolean = config.get("removeHtmlTags") ?? true;
+			const prepositions: string[] = config.get("prepositions") ?? ["telha"];
+
 			editor.selections.forEach((selection) => {
-				const word = editor.document.getText(selection);
-
-				let slug: string;
-				slug = removeAccents(word);
-				slug = slug
-					.normalize("NFD")
-					.toLowerCase()
-					.replace(prepositionsRegex, " ")
-					.replace(/[!%.'$()*+;=?\\,:#@"\\[\]_\/“”÷°©®℗™ªº–—©®℗¦|™‹›»«’]/g, " ");
-
-				if (config.get("removeHtmlTags")) {
-					slug = slug.replace(/<[^>]*>/g, " ");
-				}
-				slug = slug.trim().replace(/(\s+)/g, "-").replace(/\-+/g, "-");
-
-				editBuilder.replace(selection, slug);
+				const text = editor.document.getText(selection);
+				editBuilder.replace(selection, makeSlug(text, removeHtmlTags, prepositions));
 			});
 		});
 	}

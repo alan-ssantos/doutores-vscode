@@ -13,7 +13,7 @@ function makeSlug(text: string, removeHtmlTags?: boolean, prepositions?: string[
 
 	if (prepositions && prepositions.length) {
 		const prepositionsRegex: RegExp = new RegExp(
-			prepositions.map((preposition) => `(\\s?)${preposition.toLocaleLowerCase().trim()}(\\s?)`).join("|")
+			prepositions.map((preposition) => `\\b${preposition.toLocaleLowerCase().trim()}\\b`).join("|"), 'gmi'
 		);
 		slug = slug.replace(prepositionsRegex, " ");
 	}

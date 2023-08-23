@@ -8,8 +8,8 @@ async function textToUrl() {
 
 	if (editor) {
 		editor.edit((editBuilder) => {
-			const removeHtmlTags: boolean = config.get("removeHtmlTags") ?? true;
-			const prepositions: string[] = config.get("prepositions") ?? ["telha"];
+			const removeHtmlTags: boolean = config.get("removeHtmlTags") ?? false;
+			const prepositions: string[] = config.get("prepositions") ?? [];
 
 			editor.selections.forEach((selection) => {
 				const text = editor.document.getText(selection);

@@ -11,7 +11,7 @@
     "url": "https://github.com/alan-ssantos/drs.git"
   },
   "homepage": "https://github.com/alan-ssantos/drs/blob/main/README.md",
-  "version": "0.18.0",
+  "version": "0.19.1",
   "engines": {
     "vscode": "^1.71.0"
   },
@@ -74,6 +74,10 @@
       {
         "command": "drs.createFilesFromVet",
         "title": "Criar arquivos"
+      },
+      {
+        "command": "drs.turnVet",
+        "title": "Transformar em vet"
       },
       {
         "command": "drs.runOnOpenFiles",
@@ -172,6 +176,10 @@
       {
         "command": "drs.createFilesFromVet",
         "key": "ctrl+k x"
+      },
+      {
+        "command": "drs.turnVet",
+        "key": "ctrl+k v"
       },
       {
         "command": "drs.runOnOpenFiles",

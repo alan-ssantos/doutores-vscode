@@ -72,16 +72,16 @@
         "title": "Adicionar strong no texto"
       },
       {
-        "command": "drs.createFilesFromVet",
-        "title": "Criar arquivos"
+        "command": "drs.runOnOpenFiles",
+        "title": "Executar comando nos arquivos abertos"
       },
       {
         "command": "drs.turnVet",
-        "title": "Transformar em vet"
+        "title": "Transformar em vetor"
       },
       {
-        "command": "drs.runOnOpenFiles",
-        "title": "Executar nos arquivos abertos"
+        "command": "drs.createFilesFromVet",
+        "title": "Criar arquivos"
       }
     ],
     "configuration": {

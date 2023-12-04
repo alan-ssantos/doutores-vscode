@@ -24,11 +24,11 @@ Comando para abrir arquivos php contidos na raiz do projeto, há duas maneiras d
 1. Execute o comando no teclado e em seguida selecione qual será a lista de arquivos a serem abertos;
 2. Selecione um ou mais nomes de arquivos e em seguida execute o comando, assim será aberto apenas os arquivos selecionados. 
 
-![](https://github.com/alan-ssantos/drs/openFiles.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/openFiles.gif)
 
 ### Texto para URL <kbd>ctrl+k t</kbd>
 Transforma um ou mais textos selecionados em uma url amigável.
-![](https://github.com/alan-ssantos/drs/textToUrl.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/textToUrl.gif)
 
 ### Formatar arquivos abertos <kbd>ctrl+k f</kbd>
 Executa a formatação em todos os arquivos que estiverem abertos.
@@ -39,28 +39,28 @@ Comando para descartar as <strong>alterações não salvas</strong> de um arquiv
 
 ### Gerar cores <kbd>ctrl+k p</kbd>
 A partir de uma ou mais cores hexadecimais selecionadas, este comando gera uma cor mais clara e outra mais escura.
-![](https://github.com/alan-ssantos/drs/generateColors.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/generateColors.gif)
 
 ### Substituir Description <kbd>ctrl+k d</kbd>
 Substitui a description de um arquivo de mpi, a nova description é retirada a partir de uma strong com a palavra-chave contida no texto.
   >⚠️ Caso não haja ocorrência do título ou não tenha caracteres suficientes no texto, a substituição não será feita.
 
-![](https://github.com/alan-ssantos/drs/replaceDescription.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/replaceDescription.gif)
 
 ### Adicionar strong no texto <kbd>ctrl+k o</kbd>
 Adiciona a tag strong em todas as ocorrências da palavra-chave em um arquivo de mpi.
-![](https://github.com/alan-ssantos/drs/addStrongTag.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/addStrongTag.gif)
 
 ### Executar comando nos arquivos abertos <kbd>ctrl+k k</kbd>
 Permite executar os comandos (até o momento) de [Substituir Description <kbd>ctrl+k d</kbd>](#substituir-description-ctrlk-d) e [Adicionar strong no texto <kbd>ctrl+k o</kbd>](#adicionar-strong-no-texto-ctrlk-o) em todos os arquivos PHP abertos no editor.
-![](https://github.com/alan-ssantos/drs/runOnOpenFiles.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/runOnOpenFiles.gif)
 
 ### Transformar em vetor <kbd>ctrl+k v</kbd>
 Transforma as seleções de texto em vetores contendo url, title, cover e sub-menu.
-![](https://github.com/alan-ssantos/drs/turnVet.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/turnVet.gif)
 
 ### Criar arquivos <kbd>ctrl+k x</kbd>
 Cria páginas a partir de um vetor e um template selecionado, o template pode ser o ```default``` ou uma página do vetor já existente.
   >⚠️ O comando substitui apenas as variáveis no topo das páginas criadas ($h1, $title e $desc), todo o resto do conteúdo deve ser alterado manualmente.
 
-![](https://github.com/alan-ssantos/drs/createFilesFromVet.gif)
+![](https://github.com/alan-ssantos/drs/blob/development/tutorials/createFilesFromVet.gif)

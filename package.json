@@ -82,6 +82,10 @@
       {
         "command": "drs.createFilesFromVet",
         "title": "Criar arquivos"
+      },
+      {
+        "command": "drs.turnList",
+        "title": "Transformar em lista"
       }
     ],
     "configuration": {
@@ -184,6 +188,10 @@
       {
         "command": "drs.runOnOpenFiles",
         "key": "ctrl+k k"
+      },
+      {
+        "command": "drs.turnList",
+        "key": "ctrl+k l"
       }
     ]
   },

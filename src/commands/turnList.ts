@@ -32,8 +32,12 @@ async function turnList() {
 
 function createListContent(text: string): string {
 	let listItems = text.split(/;\s+\n+|;\s+|\n+|;/gm);
+	listItems = listItems.filter((item) => item.trim().length > 0);
 	return listItems
-		.map((item, index) => `\n\t<li>${item.trim()};</li>`)
+		.map((item, index, arr) => {
+			const punctuation = index === arr.length - 1 ? "." : ";";
+			return `\n\t<li>${item.trim()}${punctuation}</li>`;
+		})
 		.join("")
 		.replace(/\s*\n*<li>;<\/li>/g, "");
 }

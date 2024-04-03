@@ -11,8 +11,9 @@
     "type": "git",
     "url": "https://github.com/alan-ssantos/drs.git"
   },
+  "icon": "./public/icons/drs.jpg",
   "homepage": "https://github.com/alan-ssantos/drs/blob/main/README.md",
-  "version": "0.22.8",
+  "version": "0.22.9",
   "engines": {
     "vscode": "^1.71.0"
   },

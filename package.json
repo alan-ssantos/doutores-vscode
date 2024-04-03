@@ -6,12 +6,13 @@
     "name": "Alan Santos"
   },
   "publisher": "alan-ssantos",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/alan-ssantos/drs.git"
   },
   "homepage": "https://github.com/alan-ssantos/drs/blob/main/README.md",
-  "version": "0.22.6",
+  "version": "0.22.8",
   "engines": {
     "vscode": "^1.71.0"
   },

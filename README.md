@@ -2,8 +2,7 @@
 
 ## 📖 Sobre o projeto
 
-Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros em projetos
-. 🛠️👨🏽‍⚕️
+Esta extensão funciona como um kit de ferramentas, pois trás um compilado de funções para aumentar a produtividade e corrigir de erros. 👨🏽‍⚕️🛠️
 
 ## 📑 Lista de comandos
 
@@ -14,15 +13,9 @@ Esta extensão funciona como um kit de ferramentas, pois trás um compilado de f
 - [Gerar cores <kbd>ctrl+k p</kbd>](#gerar-cores-ctrlk-p)
 - [Substituir Description <kbd>ctrl+k d</kbd>](#substituir-description-ctrlk-d)
 - [Adicionar strong no texto <kbd>ctrl+k o</kbd>](#adicionar-strong-no-texto-ctrlk-o)
-- [Executar nos arquivos abertos <kbd>ctrl+k k</kbd>](#executar-nos-arquivos-abertos-ctrlk-k)
-
-## 🛠️ Instalação e execução
-
-## Como instalar
-1. Faça o download do arquivo [`drs-0.19.0.vsix`](https://github.com/alan-ssantos/drs/releases) na sessão assets;
-2. No VS Code, vá até a aba de extensões <kbd>ctrl+shift+x</kbd>;
-3. Com a aba de extensões aberta, clique em mais opções (os três pontinhos ao lado do título da aba) e em seguida em "Instalar do VSIX...";
-4. Selecione o arquivo da extensão baixado anteriormente e aguarde que a instalação seja concluída. 
+- [Executar comando nos arquivos abertos <kbd>ctrl+k k</kbd>](#executar-nos-arquivos-abertos-ctrlk-k)
+- [Transformar em vetor <kbd>ctrl+k v</kbd>](#transformar-em-vetor-ctrlk-v)
+- [Criar arquivos <kbd>ctrl+k x</kbd>](#criar-arquivos-ctrlk-x)
 
 ## Descrição dos comandos
 
@@ -31,27 +24,43 @@ Comando para abrir arquivos php contidos na raiz do projeto, há duas maneiras d
 1. Execute o comando no teclado e em seguida selecione qual será a lista de arquivos a serem abertos;
 2. Selecione um ou mais nomes de arquivos e em seguida execute o comando, assim será aberto apenas os arquivos selecionados. 
 
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748138/open-files.gif)
+
 ### Texto para URL <kbd>ctrl+k t</kbd>
 Transforma um ou mais textos selecionados em uma url amigável.
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748137/text-to-url.gif)
 
 ### Formatar arquivos abertos <kbd>ctrl+k f</kbd>
 Executa a formatação em todos os arquivos que estiverem abertos.
-Ao executar este comando, será utilizado o formatador padrão ou o definido pelo usuário, para arquivos PHP é possível utilizar o [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) ou similares.
-  > Atente-se em fechar os arquivos que não devem ser alterados.
+  >⚠️ Ao executar este comando, será utilizado o formatador padrão ou o definido pelo usuário, para arquivos PHP é possível utilizar o [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) ou similares. Atente-se em fechar os arquivos que não devem ser alterados.
 
 ### Descartar alterações e fechar <kbd>ctrl+k q</kbd>
 Comando para descartar as <strong>alterações não salvas</strong> de um arquivo e o fecha-lo logo em seguida.
 
 ### Gerar cores <kbd>ctrl+k p</kbd>
 A partir de uma ou mais cores hexadecimais selecionadas, este comando gera uma cor mais clara e outra mais escura.
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748137/generate-colors.gif)
 
 ### Substituir Description <kbd>ctrl+k d</kbd>
 Substitui a description de um arquivo de mpi, a nova description é retirada a partir de uma strong com a palavra-chave contida no texto.
-  > Caso nenhuma strong seja encontrada no arquivo, a substituição falhará.
+  >⚠️ Caso não haja ocorrência do título ou não tenha caracteres suficientes no texto, a substituição não será feita.
+
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748517/replace-description.gif)
 
 ### Adicionar strong no texto <kbd>ctrl+k o</kbd>
 Adiciona a tag strong em todas as ocorrências da palavra-chave em um arquivo de mpi.
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748137/add-strong-tag.gif)
 
-### Executar nos arquivos abertos <kbd>ctrl+k k</kbd>
+### Executar comando nos arquivos abertos <kbd>ctrl+k k</kbd>
 Permite executar os comandos (até o momento) de [Substituir Description <kbd>ctrl+k d</kbd>](#substituir-description-ctrlk-d) e [Adicionar strong no texto <kbd>ctrl+k o</kbd>](#adicionar-strong-no-texto-ctrlk-o) em todos os arquivos PHP abertos no editor.
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748138/run-on-open-files.gif)
 
+### Transformar em vetor <kbd>ctrl+k v</kbd>
+Transforma as seleções de texto em vetores contendo url, title, cover e sub-menu.
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748137/turn-selection-in-vet.gif)
+
+### Criar arquivos <kbd>ctrl+k x</kbd>
+Cria páginas a partir de um vetor e um template selecionado, o template pode ser o ```default``` ou uma página do vetor já existente.
+  >⚠️ O comando substitui apenas as variáveis no topo das páginas criadas ($h1, $title e $desc), todo o resto do conteúdo deve ser alterado manualmente.
+
+![](https://res.cloudinary.com/frase-fun/image/upload/v1701748704/create-files-from-vet.gif)

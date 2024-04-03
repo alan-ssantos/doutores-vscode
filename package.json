@@ -6,12 +6,14 @@
     "name": "Alan Santos"
   },
   "publisher": "alan-ssantos",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/alan-ssantos/drs.git"
   },
+  "icon": "./public/icons/drs.jpg",
   "homepage": "https://github.com/alan-ssantos/drs/blob/main/README.md",
-  "version": "0.18.4",
+  "version": "0.22.9",
   "engines": {
     "vscode": "^1.71.0"
   },
@@ -73,7 +75,19 @@
       },
       {
         "command": "drs.runOnOpenFiles",
-        "title": "Executar nos arquivos abertos"
+        "title": "Executar comando nos arquivos abertos"
+      },
+      {
+        "command": "drs.turnVet",
+        "title": "Transformar em vetor"
+      },
+      {
+        "command": "drs.createFilesFromVet",
+        "title": "Criar arquivos"
+      },
+      {
+        "command": "drs.turnList",
+        "title": "Transformar em lista"
       }
     ],
     "configuration": {
@@ -166,8 +180,20 @@
         "key": "ctrl+k o"
       },
       {
+        "command": "drs.createFilesFromVet",
+        "key": "ctrl+k x"
+      },
+      {
+        "command": "drs.turnVet",
+        "key": "ctrl+k v"
+      },
+      {
         "command": "drs.runOnOpenFiles",
         "key": "ctrl+k k"
+      },
+      {
+        "command": "drs.turnList",
+        "key": "ctrl+k l"
       }
     ]
   },

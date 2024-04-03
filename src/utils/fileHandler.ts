@@ -5,8 +5,8 @@ interface VetKeyInterface {
 	content: string;
 }
 
-export async function getVetFiles(): Promise<string[]> {
-	const files = await vscode.workspace.findFiles("inc/vet*php");
+export async function getVetFiles(ignoreVetKey?: boolean): Promise<string[]> {
+	const files = await vscode.workspace.findFiles("inc/vet*php", ignoreVetKey ? "inc/vet[Kk][Ee][Yy].php" : null);
 	const pathnames = files
 		.map((file) => {
 			const fileName = file.path.split("inc/");
@@ -35,7 +35,15 @@ export function getPathnames(vetKey: string): string[] {
 		throw new Error("Nenhum caminho foi encontrado no arquivo encontrada na vetKey.");
 	}
 
-	const pathnames = urls.map(([match, slug]) => slug);
+	return urls.map(([m, slug]) => slug);
+}
 
-	return pathnames;
+export function getVetTitles(vetKey: string): string[] {
+	const titles = [...vetKey.matchAll(/"(key|title)"\s?=>\s?"(.*?)"/g)];
+
+	if (!titles) {
+		throw new Error("Nenhum caminho foi encontrado no arquivo encontrada na vetKey.");
+	}
+
+	return titles.map(([m, k, title]) => title);
 }

@@ -27,13 +27,13 @@ function getNewDescription(documentText: string): string {
 async function replaceDescription() {
 	const config = vscode.workspace.getConfiguration("drs.replaceDescription");
 
-	try {
-		const editor = vscode.window.activeTextEditor;
+	const editor = vscode.window.activeTextEditor;
 
-		if (editor) {
-			const document = editor.document;
-			const documentText = document.getText();
+	if (editor) {
+		const document = editor.document;
+		const documentText = document.getText();
 
+		try {
 			const pageDescription = getPageDescription(document);
 			let newDescription = getNewDescription(documentText);
 
@@ -71,12 +71,12 @@ async function replaceDescription() {
 			if (config.get("autoSave") === true) {
 				await vscode.commands.executeCommand("workbench.action.files.save");
 			}
-		}
-	} catch (e) {
-		if (typeof e === "string") {
-			vscode.window.showErrorMessage(e);
-		} else if (e instanceof Error) {
-			vscode.window.showErrorMessage(e.message);
+		} catch (e) {
+			if (typeof e === "string") {
+				vscode.window.showErrorMessage(e);
+			} else if (e instanceof Error) {
+				vscode.window.showErrorMessage(`${e.message} [${document.fileName.replace(/.*(?<=\\)/g, "")}](${document.uri.toString()})`);
+			}
 		}
 	}
 }

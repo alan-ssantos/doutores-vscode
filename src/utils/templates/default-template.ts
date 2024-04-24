@@ -1,13 +1,13 @@
 const defaultTemplateContent = `<?
-$h1				 = "Title";
-$title			= "Title";
-$desc			 = "Title - ";
-$key				= "uuuuuuuuuu, jjjjjjjjjjjj, lllllllllll";
-$var				= "Title";
+$h1         = "Title";
+$title      = "Title";
+$desc       = "Title - ";
+$key        = "uuuuuuuuuu, jjjjjjjjjjjj, lllllllllll";
+$var        = "Title";
 include("inc/head.php");
 ?>
-<!--STARTSCRIPTSHEADER-->
-<!--ENDSCRIPTSHEADER-->
+<!-- START SCRIPTS HEADER -->
+<!-- END SCRIPTS HEADER -->
 </head>
 
 <body>
@@ -15,8 +15,8 @@ include("inc/head.php");
   <main>
     <div class="content">
       <section>
-        <?= $autoBreadcrumb ?>
-        <!--STARTCOMPONENTS-->
+        <?php include("inc/auto-breadcrumb.php"); ?>
+        <!-- START COMPONENTS -->
         <div class="container">
           <div class="wrapper">
             <h2>Saiba mais sobre <?= $h1 ?></h2>
@@ -24,16 +24,15 @@ include("inc/head.php");
           </div>
           <div class="clear"></div>
         </div>
-        <!--ENDCOMPONENTS-->
+        <!-- END COMPONENTS -->
       </section>
     </div>
   </main>
   <?php include("inc/footer.php"); ?>
-  <!--STARTSCRIPTSFOOTER-->
-  <!--ENDSCRIPTSFOOTER-->
+  <!-- START SCRIPTS FOOTER -->
+  <!-- END SCRIPTS FOOTER -->
 </body>
 
 </html>`;
 
 export default defaultTemplateContent;
-

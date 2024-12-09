@@ -88,6 +88,10 @@
       {
         "command": "drs.turnList",
         "title": "Transformar em lista"
+      },
+      {
+        "command": "drs.formatMPI",
+        "title": "Formatar MPI"
       }
     ],
     "configuration": {
@@ -147,6 +151,10 @@
           "type": "boolean",
           "default": true,
           "description": "Salvar o arquivo automaticamente após adicionar as tags strong."
+        },
+        "drs.formatMPI.replaceScriptPath": {
+          "type": "string",
+          "description": "Caminho para o script de replace"
         }
       }
     },
